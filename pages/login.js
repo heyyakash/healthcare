@@ -16,7 +16,7 @@ const login = () => {
                 <div className="bg-white/90 flex-1 flex justify-center flex-col items-center">
                     {/* <p>Login To Continue</p> */}
                     <a
-                        onClick={()=>signIn()}
+                        onClick={()=>signIn('google',{callbackUrl:"/"})}
                         href="#_"
                         className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
                     >
