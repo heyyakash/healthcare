@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import img from '../Images/img1.png';
+// import img from '../Images/img1.png';
 const Hero = () => {
   
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
               {/* Image section */}
 
       <div className='mx-7 flex-1 pt-5'>
-          <Image src={img} alt="" className='w-100 h-full  object-cover  '/>
+          <img src="img1.png"  alt="" className='w-100 h-full  object-cover  '/>
        </div>
    
               {/* Text section */}

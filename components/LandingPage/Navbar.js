@@ -14,10 +14,10 @@ const Navbar = () => {
         <div className='text-white md:block hidden px-7 py-2 font-medium bg-gray-900 rounded-bl-full   ' >
             <ul className='flex items-center gap-8  text-lg '>
                 <Link href='#'><li>What we do</li></Link>
-                <Link href='#'><li>Our offerings</li></Link>
+                <Link href='#service'><li>Our offerings</li></Link>
                 <Link href='#'><li>Prising</li></Link>
                 <Link href='#'><li>Blog</li></Link>
-                <button>Login</button>
+                <Link href="/login">Login</Link>
             </ul>
         </div>
     </div>

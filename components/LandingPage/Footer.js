@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     // *-------Heading-------*//
-     <div className='pt-4'>
+     <div className='pt-4' id = "service">
        <h1 className='flex justify-center font-mono text-2xl'>Our Services</h1>
        <p className='flex justify-center pt-4 text-3xl font-bold'>What is <span className='text-[#C4FA6F] font-bold mx-2'>Hcare</span> services</p>
        <p className='flex justify-center pt-4'>Hcare is online medical services for prevent and get fast medical treatment from corona virus,we will help you</p> <p className='flex justify-center'>at any time with our 24 hours services,this is corona services you can get</p>

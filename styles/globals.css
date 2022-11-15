@@ -2,15 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "ProductSans";
+  src: url('../public/ProductSansRegular.ttf');
+}
+@font-face {
+  font-family: "ProductSansBold";
+  src: url('../public/ProductSansBold.ttf');
+}
+
 @layer base{
   *{
     @apply box-border;
   }
-  html,body{
-    @apply p-0 m-0;
+  html{
+    @apply scroll-smooth;
+  }
+  body{
+    @apply p-0 m-0 font-productSans;
   }
   a{
     @apply text-inherit 
   }
+  rect{
+    @apply bg-black;
+  }
 }
 
+@layer components{
+  .trans{
+    @apply transition-all duration-150;
+  }
+  .lilBox{
+    @apply w-full font-bold flex flex-col items-center py-4 justify-center h-full overflow-hidden bg-white rounded-xl;
+  }
+}

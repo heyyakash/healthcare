@@ -68,3 +68,11 @@ const login = () => {
 }
 
 export default login
+
+login.getLayout = function PageLayout(page){
+    return (
+        <>
+            {page}
+        </>
+    )
+}

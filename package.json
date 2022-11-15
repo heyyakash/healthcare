@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nivo/bar": "^0.80.0",
+    "@nivo/bump": "^0.80.0",
+    "@nivo/line": "^0.80.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
     "firebase": "^9.13.0",
     "next": "13.0.2",
     "next-auth": "^4.16.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
