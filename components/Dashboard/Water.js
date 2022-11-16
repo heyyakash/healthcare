@@ -54,34 +54,6 @@ const   Water = () => {
         margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
         axisRight={null}
     />
-
-        {/* <Line
-        width={280}
-        colors={{scheme:"category10"}}
-        height={120}
-        data={data}
-        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-        xScale={{ type: 'point' }}
-        yScale={{
-            type: 'linear',
-            min: 'auto',
-            max: 'auto',
-            stacked: true,
-            reverse: false
-        }}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={null}
-        axisLeft={null}
-        enableGridX={false}
-        enableGridY={false}
-        pointColor={{ theme: 'background' }}
-        pointBorderWidth={7}
-        pointBorderColor={{ from: 'serieColor' }}
-        pointLabelYOffset={-12}
-        areaOpacity={1}
-        legends={[]}
-    /> */}
     </div>
   )
 }

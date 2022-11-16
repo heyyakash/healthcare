@@ -8,8 +8,10 @@ const Header = () => {
     const router = useRouter();
     const headerMap = {
         "/":"Dashboard",
-        "/food":"Food & Nutrition",
-        "/help":"Help"
+        "/foodnutrition":"Food & Nutrition",
+        "/help":"Help",
+        "/sleep":"Sleep",
+        "/excercise":"Excercise & Yoga"
     }
   return (
     <div className='p-1 flex items-center'>
