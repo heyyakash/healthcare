@@ -17,7 +17,7 @@ export default function Home() {
       router.push('/login')
     }
     else {
-      localStorage.setItem('healthcare', JSON.stringify(session))
+      // localStorage.setItem('healthcare', JSON.stringify(session))
       handleSignUp()
     }
   }, [])
@@ -27,6 +27,8 @@ export default function Home() {
     const docRef = doc(db, 'users', session?.user?.email)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
+      const userData = docSnap.data()
+      localStorage.setItem("userDoc",JSON.stringify(userData))
       console.log('Document Data', docSnap.data())
     }
     else {

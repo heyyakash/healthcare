@@ -39,4 +39,7 @@
   .foodbox{
     @apply px-4 bg-gray-100 rounded-2xl overflow-hidden w-full;
   }
+  .signUpInput{
+    @apply p-2  h-9 border-[1px] rounded-lg border-gray-200;
+  }
 }

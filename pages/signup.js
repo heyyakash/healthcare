@@ -1,9 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 
-const NoSSR = dynamic(() => import('../components/SignUp'), { ssr: false })
+const NoSSR = dynamic(() => import('../components/SignUp/SignUp'), { ssr: false })
 
-const signup = () => {
+const Signup = () => {
 
     return (
 
@@ -11,4 +11,12 @@ const signup = () => {
     )
 }
 
-export default signup
+export default Signup
+
+Signup.getLayout = function(page){
+    return(
+        <>
+        {page}
+        </>
+    )
+}
