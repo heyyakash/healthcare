@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import { SessionProvider } from "next-auth/react"
-
 import Header from '../components/Main/Header'
 import Navbar from '../components/Main/Navbar'
 

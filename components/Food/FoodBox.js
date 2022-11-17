@@ -38,7 +38,7 @@ const FoodBox = ({ name, bg, food, setFood, cal, setCal,sugar,setSugar, fibre, s
 
     return (
         <div className='foodbox relative pb-3 gap-2 text-white flex flex-col overflow-hidden cursor-pointer'>
-            <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
+            <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute h-full w-full  trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
             <div className={`absolute trans ${show ? "text-sm text-black" : "text-2xl"} top-2 left-3 `}>{name}</div>
             {show ? (
                 <>

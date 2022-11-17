@@ -4,7 +4,7 @@ import { signOut, useSession } from 'next-auth/react'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, onSnapshot } from 'firebase/firestore'
 import { db } from '../firebase'
 import Water from '../components/Dashboard/Water'
 import BloodPressure from '../components/Dashboard/BloodPressure'
@@ -17,13 +17,13 @@ export default function Home() {
       router.push('/login')
     }
     else {
-      // localStorage.setItem('healthcare', JSON.stringify(session))
       handleSignUp()
     }
   }, [])
 
 
   const handleSignUp = async () => {
+
     const docRef = doc(db, 'users', session?.user?.email)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {

@@ -1,10 +1,11 @@
 import React from 'react'
 import FoodChartBars from './FoodChartBars'
 
+
 const FoodChart = ({sugar,protein,carb,fat,cal,fibre}) => {
+
     return (
-        <div className='flex py-2 px-3 bg-white flex-col justify-between gap-2 md:h-[50%] pb-4 rounded-xl'>
-            
+        <div className='flex py-2 px-3 bg-white flex-col justify-between gap-2 md:h-[50%] pb-4 rounded-xl'>          
                 <FoodChartBars name = "Sugar" min = {sugar} max = {30} />
                 <FoodChartBars name = "Protien" min = {protein} max = {100} />
                 <FoodChartBars name = "Carbohydrates" min = {carb} max = {200} />
