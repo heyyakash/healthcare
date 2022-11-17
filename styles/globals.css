@@ -42,4 +42,7 @@
   .signUpInput{
     @apply p-2  h-9 border-[1px] rounded-lg border-gray-200;
   }
+  .blueballs{
+    @apply absolute bg-white h-[400px]  w-[400px] z-[0] trans rounded-[30%] animate-[spin_7s_ease-in-out_infinite];
+  }
 }

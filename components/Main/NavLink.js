@@ -7,8 +7,8 @@ const NavLink = ({ address, text ,type,icon}) => {
     const router = useRouter()
     const handleSignOut = () => {
         signOut()
-        localStorage.removeItem('userDoc')
         router.push('/login')
+        localStorage.removeItem('userDoc')
     }
     const path = `${address || ""}`
     if(type==="logout"){

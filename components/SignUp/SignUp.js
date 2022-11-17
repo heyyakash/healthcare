@@ -20,6 +20,7 @@ const SignUp = () => {
         data.name = session?.user?.name
         data.sleep = []
         data.food = []
+        data.water = []
         console.log(data)
         try {
             await setDoc(doc(db,"users",session?.user?.email),data)
