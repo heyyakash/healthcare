@@ -25,7 +25,7 @@ const FoodBox = ({ name, water, setWater, type, bg, food, setFood, cal, setCal, 
                 setSugar(Math.trunc(sugar += x["nf_sugars"]))
             })
 
-            console.log({ cal, protein, fibre, sugar, carb, fat })
+
             setFood("")
             setShow(false)
 
@@ -38,7 +38,7 @@ const FoodBox = ({ name, water, setWater, type, bg, food, setFood, cal, setCal, 
     if (type === "water") {
         return (
             <div className='foodbox relative pb-3 gap-2 text-black h-full flex flex-col overflow-hidden cursor-pointer'>
-                <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute h-full w-full  trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
+                <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute h-full w-full   trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
                 <div className={`absolute trans ${show ? "text-sm text-black" : "text-2xl"}  top-2 left-3 `}>{name}</div>
                 {show ? (
                     <>
@@ -67,7 +67,7 @@ const FoodBox = ({ name, water, setWater, type, bg, food, setFood, cal, setCal, 
     }
     return (
         <div className='foodbox relative pb-3 gap-2 text-white h-full flex flex-col overflow-hidden cursor-pointer'>
-            <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute h-full w-full  trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
+            <img onClick={() => setShow(true)} src={bg} alt="background" className={`absolute drop-shadow-xl  h-full w-full  trans ${show ? "-top-[1000%]" : ""} inset-0 z-0`} />
             <div className={`absolute trans ${show ? "text-sm text-black" : "text-2xl"} top-2 left-3 `}>{name}</div>
             {show ? (
                 <>

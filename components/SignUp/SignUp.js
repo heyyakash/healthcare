@@ -21,7 +21,6 @@ const SignUp = () => {
         data.sleep = []
         data.food = []
         data.water = []
-        console.log(data)
         try {
             await setDoc(doc(db,"users",session?.user?.email),data)
             localStorage.setItem("userDoc",JSON.stringify(data))

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bump } from '@nivo/bump'
+import { ResponsiveBump,Bump } from '@nivo/bump'
 
 const   Water = () => {
     const data =[
@@ -25,10 +25,7 @@ const   Water = () => {
         }
       ]
   return (
-    <div className='w-full'>
-      <Bump
-        width={280}
-        height={120}
+      <ResponsiveBump
         data={data}
         colors={{ scheme: 'category10' }}
         lineWidth={4}
@@ -51,10 +48,10 @@ const   Water = () => {
         axisBottom={null}
         axisLeft={null}
         motionConfig="wobbly"
-        margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
+        margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         axisRight={null}
     />
-    </div>
+ 
   )
 }
 
