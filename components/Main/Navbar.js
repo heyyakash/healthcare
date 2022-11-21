@@ -8,14 +8,14 @@ import NavLink from './NavLink'
 
 const Navbar = () => {
     return (
-        <div className='bg-black flex-[.2] md:h-[100vh] flex md:flex-col gap-4 overflow-hidden'>
+        <div className='bg-black flex-[.2] md:h-[100vh] flex items-center md:items-start md:flex-col gap-4 overflow-hidden'>
             <Link href="/">
-                <div className='md:w-full mt-4 flex gap-2 text-2xl items-center text-white p-4'>
+                <div className='md:w-full md:mt-4 flex gap-2 text-2xl items-center text-white p-4'>
                     <RiHeartPulseFill className='text-2xl' />
                     <span>H.care</span>
                 </div>
             </Link>
-            <div className="flex flex-col text-white gap-2 py-4 pl-4">
+            <div className="flex md:flex-col text-white items-center md:items-stretch md:w-full md:gap-4 md:py-4 md:pl-4">
                 <NavLink text = "Dashboard" address={"/"} icon = {<MdDashboard />} />
                 <NavLink text = "Food" icon = {<MdFoodBank />} address ="/foodnutrition" />
                 <NavLink text = "Sleep" icon = {<GiNightSleep />} address ="/sleep" />

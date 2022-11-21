@@ -10,7 +10,7 @@ const Header = () => {
 
     const handleSignOut = ()=>{
       signOut()
-      router.push('/login')
+      // router.push('/sleep')
     }
 
     const headerMap = {
@@ -25,7 +25,7 @@ const Header = () => {
     <div className='p-1 flex items-center'>
         <h3 className='text-xl font-productSansBold'>{headerMap[router.pathname]}</h3>
         <img src={session?.user?.image} className = " ml-auto h-6 rounded-full" alt="profile" />
-        <MdLogout onClick = {()=>signOut()} className = "text-xl cursor-pointer ml-3" />
+        <MdLogout onClick = {()=>handleSignOut()} className = "text-xl cursor-pointer ml-3" />
     </div>
   )
 }

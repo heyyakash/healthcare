@@ -1,14 +1,15 @@
-import React from 'react'
-import { useSession,signIn, signOut } from 'next-auth/react'
+import React, { useEffect } from 'react'
+import { useSession,signIn, signOut,getSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 
-const login = () => {
-    const {data:session} = useSession();
+const login = ({data}) => {
+    // const {data:session} = useSession();
     const router = useRouter()
-    if(session){
-        router.push('/')
-        
-    }
+    useEffect(()=>{
+        if(data){
+            router.push('/')
+        }
+    },[])
     return (
         <div className="w-full h-[100vh] bg-blue-100 grid place-items-center bg-[url('/loginBg.jpg')]  bg-no-repeat bg-cover ">
             <div className='h-[100vh] drop-shadow-xl backdrop-blur-md max-w-[1200px] rounded-lg overflow-hidden md:h-[95vh] w-full flex '>
@@ -75,3 +76,15 @@ login.getLayout = function PageLayout(page){
         </>
     )
 }
+
+
+export async function getServerSideProps(context) {
+    const session = await getSession(context)
+    // console.log(session)
+    return ({
+      props: {
+        data: session,
+        session
+      }
+    })
+  }

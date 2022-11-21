@@ -38,7 +38,8 @@ const Foodnutrition = () => {
     useEffect(() => {
         const userDoc = JSON.parse(localStorage.getItem('userDoc'))
         setUser(userDoc)
-        return onSnapshot(doc(db, "users", userDoc.email), (doc) => {
+        
+        onSnapshot(doc(db, "users", userDoc.email), (doc) => {
             clear()
             setData(doc.data())
 
@@ -127,15 +128,15 @@ const Foodnutrition = () => {
     }
 
     return (
-        <div className='p-1 flex flex-col h-full gap-5'>
-            <div className='flex md:h-[50%] gap-5 md:flex-row flex-col '>
+        <div className='p-1 flex flex-col h-full md:gap-5'>
+            <div className='flex md:h-[50%] h-[650px] gap-5 md:flex-row flex-col '>
                 <div className='h-full flex md:flex-[.4] flex-col'>
                     <div className="flex py-2 px-3  bg-white flex-col h-full pb-4 rounded-xl">
                         <div className='flex justify-between font-productSansBold'>
                             <p className='text-sm ml-2 '>Today's Nutrition</p>
                             <p className={`text-sm mr-2 ${success ? "text-green-500" : ""} cursor-pointer`} onClick={handleSubmit}>{success ? "Submitted" : "Submit"}</p>
                         </div>
-                        <div className='mt-4 grid grid-cols-2 p-2 grid-rows-2 grow gap-5'>
+                        <div className='mt-4 grid grid-cols-2 p-2 grid-rows-2 grow md:gap-5 gap-2'>
                             <FoodBox sugar={sugar} setSugar={setSugar} cal={cal} setCal={setCal} fibre={fibre} setFibre={setFibre} protein={protein} setProtein={setProtein} fat={fat} setFat={setFat} carb={carb} setCarb={setCarb} food={breakfast} setFood={setBreakFast} bg="/morning.jpg" name="Breakfast" />
                             <FoodBox sugar={sugar} setSugar={setSugar} cal={cal} setCal={setCal} fibre={fibre} setFibre={setFibre} protein={protein} setProtein={setProtein} fat={fat} setFat={setFat} carb={carb} setCarb={setCarb} food={lunch} setFood={setLunch} bg="/afternoon.jpg" name="Lunch" />
                             <FoodBox sugar={sugar} setSugar={setSugar} cal={cal} setCal={setCal} fibre={fibre} setFibre={setFibre} protein={protein} setProtein={setProtein} fat={fat} setFat={setFat} carb={carb} setCarb={setCarb} food={snacks} setFood={setSnacks} bg="/evening.jpg" name="Snacks" />
@@ -147,7 +148,7 @@ const Foodnutrition = () => {
                     <FoodChart sugar={sugar} carb={carb} cal={cal} fibre={fibre} protein={protein} fat={fat} />
                 </div>
             </div>
-            <div className='flex  md:h-[50%] gap-6 md:flex-row flex-col '>
+            <div className='flex  md:h-[50%] h-[650px] gap-6 md:flex-row flex-col '>
                 <div className='h-full flex md:flex-[.4] flex-col'>
                     <div className="flex py-2 px-3  bg-white flex-col h-full pb-4 rounded-xl">
                         <div className='flex justify-between font-productSansBold'>

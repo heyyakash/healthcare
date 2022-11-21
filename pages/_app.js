@@ -4,7 +4,6 @@ import { RecoilRoot } from 'recoil'
 import Container from '../components/Main/Container'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-  console.log(pageProps)
   if (Component.getLayout) {
     return Component.getLayout(
       <SessionProvider session={session}>
