@@ -47,7 +47,7 @@ const BloodPressure = () => {
                 height={150}
                 width={280}
                 indexBy="country"
-                margin={{ top: 30, right: 110, bottom: 60, left: 90 }}
+                margin={{ top: 30, right: 90, bottom: 30, left:20 }}
                 padding={0.6}
                 groupMode="grouped"
                 valueScale={{ type: 'linear' }}

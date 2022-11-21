@@ -6,7 +6,6 @@ const login = () => {
     const {data:session} = useSession();
     const router = useRouter()
     if(session){
-        console.log(session)
         router.push('/')
         
     }
