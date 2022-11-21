@@ -1,5 +1,5 @@
 import React from 'react'
-import Articles from '../components/mental-health/Articles'
+import Articles from '../components/MentalHealth/Articles'
 import Main from '../components/MentalHealth/Main'
 
 const Mentalhealth = () => {
