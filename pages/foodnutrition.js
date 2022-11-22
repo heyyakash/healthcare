@@ -1,6 +1,6 @@
 import { doc, serverTimestamp, updateDoc } from 'firebase/firestore'
 import { onSnapshot } from 'firebase/firestore'
-import { useSession } from 'next-auth/react'
+import { getSession, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import FoodBox from '../components/Food/FoodBox'
@@ -8,9 +8,10 @@ import FoodChart from '../components/Food/FoodChart'
 import WaterBody from '../components/Food/WaterBody'
 import { db } from '../firebase'
 import Water from '../components/Dashboard/Water'
+import { newDate } from '../Helpers/newDate'
 
-const Foodnutrition = () => {
-    const [data, setData] = useState(null)
+const Foodnutrition = ({ data }) => {
+    const [userData, setData] = useState(null)
     const [breakfast, setBreakFast] = useState("")
     const [lunch, setLunch] = useState("")
     const [snacks, setSnacks] = useState("")
@@ -34,37 +35,46 @@ const Foodnutrition = () => {
         setCarb(0)
         setSugar(0)
     }
+    const router = useRouter()
 
     useEffect(() => {
-        const userDoc = JSON.parse(localStorage.getItem('userDoc'))
-        setUser(userDoc)
-        
-        onSnapshot(doc(db, "users", userDoc.email), (doc) => {
-            clear()
-            setData(doc.data())
+        if (!data) router.push('/login')
+    }, [])
 
-        })
 
+    useEffect(() => {
+        if (data) {
+            onSnapshot(doc(db, "users", data?.user?.email), (doc) => {
+                clear()
+                setData(doc.data())
+
+            })
+        }
     }, [])
 
     useEffect(() => {
         clear()
-        if (data && data.food.length !== 0) {
-            if (data.water.length !== 0) {
-                const warr = [...data?.water]
-                const ldate = (new Date().getDate()).toString() + (new Date().getMonth()).toString()
-                const dbdate = (new Date(warr[warr.length - 1].created).getDate()).toString() + (new Date(warr[warr.length - 1].created).getMonth()).toString()
+        if (userData && userData.food.length !== 0) {
+            if (userData.water.length !== 0) {
+                const warr = [...userData?.water]
+                const ldate = newDate()
+                // console.log(warr)
+                const dbdate = warr[warr.length - 1].created
 
                 if (ldate === dbdate) {
-                    setWater(warr[warr.length - 1].water)
+                    console.log('matched')
+                    setWater(parseInt(warr[warr.length - 1].water))
                 }
             }
-            const arr = [...data?.food]
-            const date = new Date().getDate()
+            const arr = [...userData?.food]
+            const date = newDate()
             for (let i = arr.length - 1; i >= 0; i--) {
-                const SelectedDate = new Date(arr[i].created).getDate()
+                const SelectedDate = arr[i].created
+                console.log(SelectedDate)
                 if (date === SelectedDate) {
+                    console.log('matched')
                     let ref = arr[i]
+                    console.log(ref)
                     setFat(fat + ref.fat)
                     setCal(cal + ref.cal)
                     setCarb(carb + ref.carb)
@@ -76,19 +86,27 @@ const Foodnutrition = () => {
 
 
         }
-    }, [data])
+    }, [userData])
 
     const handleWater = async () => {
-        const waterData = { water, created: (new Date()).toString() }
+        const waterData = { water, created: newDate() }
         try {
+            if (userData?.water !== undefined && userData?.water !== null && userData?.water.length !== 0) {
+                let waterArray = [...userData?.water]
+                waterArray.push(waterData)
+                const updateRef = doc(db, "users", userData?.email)
+                await updateDoc(updateRef, {
+                    water: waterArray
+                })
+            }
+            else{
+                let waterArray = [waterData]
+                const updateRef = doc(db, "users", userData?.email)
+                await updateDoc(updateRef, {
+                    water: waterArray
+                })
 
-            let waterArray = user?.water
-            waterArray.push(waterData)
-            const updateRef = doc(db, "users", user?.email)
-            await updateDoc(updateRef, {
-                water: waterArray
-            })
-            // alert("Success")
+            }
             setWaterSuccess(true)
             setTimeout(() => {
                 setWaterSuccess(false)
@@ -108,13 +126,13 @@ const Foodnutrition = () => {
             sugar,
             cal,
             protein,
-            created: (new Date()).toString()
+            created: newDate()
         }
 
         try {
-            let foodArray = user?.food
+            let foodArray = [...userData?.food]
             foodArray.push(data)
-            const updateRef = doc(db, "users", user?.email)
+            const updateRef = doc(db, "users", userData?.email)
             await updateDoc(updateRef, {
                 food: foodArray
             })
@@ -158,7 +176,7 @@ const Foodnutrition = () => {
                         <div className='mt-4 grid grid-cols-2 grow gap-5 p-2'>
                             <div className='flex h-full gap-2 flex-col'>
                                 <FoodBox type="water" name="Water" water={water} setWater={setWater} bg="/water.jpg" />
-                                <Water />
+                                <Water data = {userData} />
                             </div>
                             <div className='relative rounded-xl overflow-hidden flex items-center justify-center bg-blue-500'>
                                 <h1 className='text-[3rem] z-[100] font-productSansBold'>{water}</h1>&nbsp;L
@@ -188,3 +206,13 @@ const Foodnutrition = () => {
 }
 
 export default Foodnutrition
+
+export async function getServerSideProps(context) {
+    const session = await getSession(context)
+    return {
+        props: {
+            data: session
+        }
+    }
+
+}

@@ -21,7 +21,7 @@ const Activity = ({data}) => {
         arr.reverse()
         setDays(arr)
         
-        if(data?.steps!==undefined & data?.steps!==null & data?.steps?.length!==0){
+        if(data?.steps!==undefined && data?.steps!==null && data?.steps?.length!==0){
             for(let j=0;j<days.length;j++){
                 for(let i=0;i<data.steps.length;i++){
                     if(data.steps[i].created===days[j]){
@@ -33,6 +33,12 @@ const Activity = ({data}) => {
                 }
             }
             console.log(stepArr)
+            setSteps(stepArr)
+        }
+        else{
+            for(let i=0;i<limit;i++){
+                stepArr.push(0)
+            }
             setSteps(stepArr)
         }
     }, [data])

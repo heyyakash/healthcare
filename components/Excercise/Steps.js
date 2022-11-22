@@ -7,7 +7,7 @@ const Steps = ({data}) => {
     const [steps,setSteps] = useState(0)
     useEffect(()=>{
         // console.log(moment('22-11-2022').format('DD/MM/YYYY'))
-        if(data?.steps!==undefined & data?.steps!==null & data?.steps.length!==0){
+        if(data?.steps!==undefined && data?.steps!==null && data?.steps.length!==0){
             const size = data?.steps.length-1
             const last = data?.steps[size]
             if(last?.created=== newDate()){

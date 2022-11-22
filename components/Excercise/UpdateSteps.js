@@ -7,7 +7,7 @@ const UpdateSteps = ({ data }) => {
     const [steps, setSteps] = useState(null)
     const submitData = async () => {
         let arr = []
-        if (data.steps !== undefined & data.steps !== null &data.steps.length!==0) {
+        if (data.steps !== undefined && data.steps !== null &&data.steps.length!==0) {
             arr = [...data.steps]
             let size = arr.length - 1
             const last = arr[size]

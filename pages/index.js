@@ -54,6 +54,7 @@ export default function Home({ data }) {
   }
 
   return (
+    userData&&
     <div className="grow">
       <Head>
         <title>Dashboard</title>
@@ -74,7 +75,7 @@ export default function Home({ data }) {
                 <h1 className='text-2xl'>5 </h1><p className='text-md text-gray-400 font-light'>Litre</p>
                 <p>Water</p>
               </div>
-              <Water className = "hidden" />
+              <Water data = {userData} />
             </div>
             <div className='lilBox h-full'>
               <div className='flex flex-col items-center  h-full w-[40%] justify-center gap-1'>
