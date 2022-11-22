@@ -30,7 +30,7 @@ const SleepBars = ({timeBars}) => {
             {timeBars.length===0?(<h2 className='self-center'>No Data</h2>):""}
             {bars.map((x)=>{
                 return(
-                    <Bars height={x} />
+                    <Bars key = {x} height={x} />
                 )
                 
             })}

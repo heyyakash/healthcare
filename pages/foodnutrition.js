@@ -151,7 +151,7 @@ const Foodnutrition = ({ data }) => {
                 <div className='h-full flex md:flex-[.4] flex-col'>
                     <div className="flex py-2 px-3  bg-white flex-col h-full pb-4 rounded-xl">
                         <div className='flex justify-between font-productSansBold'>
-                            <p className='text-sm ml-2 '>Today's Nutrition</p>
+                            <p className='text-sm ml-2 '>Today&apos;s Nutrition</p>
                             <p className={`text-sm mr-2 ${success ? "text-green-500" : ""} cursor-pointer`} onClick={handleSubmit}>{success ? "Submitted" : "Submit"}</p>
                         </div>
                         <div className='mt-4 grid grid-cols-2 p-2 grid-rows-2 grow md:gap-5 gap-2'>
