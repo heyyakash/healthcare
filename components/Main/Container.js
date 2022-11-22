@@ -8,6 +8,7 @@ import {db} from '../../firebase'
 import { useRouter } from 'next/router'
 import { userDataState } from '../../atom/userData'
 import {useRecoilState} from 'recoil'
+import Chat from '../LandingPage/Chat'
 
 const Container = ({ children }) => {
     const {data:session} =  useSession()
@@ -23,6 +24,7 @@ const Container = ({ children }) => {
             <div className='flex flex-col md:flex-row md:h-[100vh] h-auto w-full bg-black'>
                 <Navbar />
                 <div className='flex-1 bg-black px-4 pb-4 md:p-4'>
+                    <Chat />
                     <div className='bg-white/95 rounded-xl flex flex-col gap-2 w-full p-4 h-full md:rounded-[20px]'>
                         <Header />
                         {children}
