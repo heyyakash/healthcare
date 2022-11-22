@@ -15,7 +15,7 @@ const Navbar = () => {
                     <span>H.care</span>
                 </div>
             </Link>
-            <div className="flex md:flex-col text-white items-center md:items-stretch md:w-full md:gap-4 md:py-4 md:pl-4">
+            <div className="flex md:flex-col ml-auto mr-5 text-white items-center md:items-stretch md:w-full md:gap-4 md:py-4 md:pl-4">
                 <NavLink text = "Dashboard" address={"/"} icon = {<MdDashboard />} />
                 <NavLink text = "Food" icon = {<MdFoodBank />} address ="/foodnutrition" />
                 <NavLink text = "Sleep" icon = {<GiNightSleep />} address ="/sleep" />
@@ -23,7 +23,7 @@ const Navbar = () => {
                 <NavLink text = "Mental Heath" icon = {<RiMentalHealthFill />} address ="/mentalhealth" />
                 <hr className='bg-white ml-3 hidden md:block my-3' />
                 <NavLink text = "Help" icon = {<MdOutlineHelp />} address ="/help" />
-                <NavLink type= "logout" text = "Logout" icon = {<MdLogout />}address = "#" />
+                {/* <NavLink type= "logout" text = "Logout" icon = {<MdLogout />}address = "#" /> */}
             </div>
 
             

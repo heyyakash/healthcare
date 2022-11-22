@@ -22,8 +22,8 @@ const Main = ({ session }) => {
                 <Steps data={data} />
                 <Overview data={data} />
             </div>
-            <div className='grid gap-6 md:grid-rows-1 grid-rows-3 md:grid-cols-4 md:h-[33%] p-2'>
-                <div className='grid md:grid-cols-3 md:grid-rows-1 grid-rows-2 col-span-2 rounded-xl gap-6'>
+            <div className='grid gap-6 md:grid-rows-1 grid-rows-2 md:grid-cols-4 md:h-[33%] p-2'>
+                <div className='grid md:grid-cols-3 md:grid-rows-1 grid-rows-2 md:col-span-2 rounded-xl gap-6'>
                     <UpdateSteps data={data} />
                     <CheckExcercise />
                 </div>

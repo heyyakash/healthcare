@@ -10,8 +10,8 @@ const WaterBody = ({val}) => {
     }
   return (
     <>
-    <div  className={`-left-[100%] blueballs ${val>4?maps[4]:maps[val]} rounded-[30%] duration-[4s]`}></div>
-    <div  className={`blueballs ${maps[val]}`}></div>
+    <div  className={`-left-[100%] blueballs ${val>4?"bg-blue-500":maps[val]} rounded-[30%] duration-[4s]`}></div>
+    <div  className={`blueballs ${val>4?"bg-blue-500":maps[val]}`}></div>
     </>
   )
 }

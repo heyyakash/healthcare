@@ -27,7 +27,7 @@ const CheckExcercise = () => {
         }
     }
     return (
-        <div className='col-span-2 bg-white rounded-xl flex gap-2 flex-col p-3'>
+        <div className='md:col-span-2  bg-white rounded-xl flex gap-2 flex-col md:p-3 p-1'>
             <p className='text-lg font-productSansBold'>Check Excercise</p>
             <div className='flex gap-3'>
                 <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" className='bg-gray-200/90 rounded-xl grow p-2 h-9' placeholder='Ran 3 kms' />

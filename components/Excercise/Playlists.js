@@ -3,7 +3,7 @@ import Box from './Box'
 
 const Playlists = () => {
   return (
-    <div className='col-span-2'>
+    <div className='md:col-span-2 '>
       <div className='w-full h-full rounded-xl bg-white p-3 flex flex-col gap-2'>
         <p className='text-lg font-productSansBold'>Excercise playlists</p>
         <div className='grow grid md:grid-cols-4 gap-3 grid-cols-2 grid-rows-2 md:grid-rows-1'>

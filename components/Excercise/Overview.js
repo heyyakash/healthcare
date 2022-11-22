@@ -44,13 +44,16 @@ const Overview = ({data}) => {
                 setCalHeight(10)
             }
         }
+        
     },[data])
+    // console.log([cal,pro,carb])
+    //     console.log([calHeight,proHeight,carbHeight])
     return (
         <div className="flex flex-col p-3 bg-white rounded-xl">
             <h2 className='text-lg font-productSansBold'>Overview</h2>
             <div className='grid grid-cols-2 gap-8 px-2 rounded-xl '>
                 <div className='flex overflow-hidden justify-evenly gap-2 items-end'>
-                    <div style = {{height:calHeight.toString()+"%"}} className='grow bg-green-500 rounded-xl '></div>
+                    <div style = {{height:`${calHeight.toString()}%`}} className='grow bg-green-500 rounded-xl '></div>
                     <div style = {{height:proHeight.toString()+"%"}} className='grow bg-yellow-500 rounded-xl'></div>
                     <div style = {{height:carbHeight.toString()+"%"}} className='grow bg-pink-500 rounded-xl '></div>
                 </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import TipBox from '../MentalHealth/TipBox'
 import Carousel from './Carousel'
 import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
 

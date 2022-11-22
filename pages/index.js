@@ -14,6 +14,7 @@ import { RiVirusFill } from 'react-icons/ri'
 
 import News from '../components/Dashboard/News'
 import Steps from '../components/Excercise/Steps'
+import SleepBars from '../components/Sleep/SleepBars'
 
 export default function Home({ data }) {
   const router = useRouter()
@@ -71,19 +72,13 @@ export default function Home({ data }) {
             </div>
             <Steps data={userData} />
             <div className='relative lilBox h-full'>
-              <div className='flex flex-col items-center  h-full w-[40%] justify-center gap-1'>
-                <h1 className='text-2xl'>5 </h1><p className='text-md text-gray-400 font-light'>Litre</p>
-                <p>Water</p>
-              </div>
-              <Water data={userData} />
+              
+              <Water data={userData} showValue  ={true} />
             </div>
-            <div className='lilBox h-full'>
-              <div className='flex flex-col items-center  h-full w-[40%] justify-center gap-1'>
-                <h1 className='text-2xl'>110</h1><p className='text-md text-gray-400 font-light'>Good</p>
-                <p>BP</p>
-              </div>
-              <BloodPressure />
-
+            <div className='lilBox flex items-center justify-between h-full'>
+              
+              {/* <BloodPressure /> */}
+              <SleepBars showVal={true} timeBars={userData?.sleep} />
             </div>
           </div>
           <div className='w-full md:h-[50%] p-2 pb-0'>

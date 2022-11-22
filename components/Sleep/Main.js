@@ -6,6 +6,7 @@ import { db } from '../../firebase'
 import { useSession } from 'next-auth/react'
 import Survey from './Survey'
 import { useRouter } from 'next/router'
+import SleepTips from './SleepTips'
 
 const Main = ({ session }) => {
     const router =useRouter()
@@ -39,6 +40,7 @@ const Main = ({ session }) => {
         <div className='grid gap-2 md:grid-cols-2 md:grid-rows-1 grid-rows-2 h-full w-full '>
             <div className=' w-full h-full flex flex-col'>
                 <SleepBox data = {data} setTime = {setTime} success = {success} submitTime = {submitTime} time = {time} />
+                <SleepTips />
             </div>
             <div className=' w-full h-full'><Survey /></div>
 

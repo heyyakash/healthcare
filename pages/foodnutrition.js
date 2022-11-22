@@ -48,30 +48,25 @@ const Foodnutrition = ({ data }) => {
             onSnapshot(doc(db, "users", data?.user?.email), (doc) => {
                 clear()
                 setData(doc.data())
-
             })
         }
     }, [])
 
     useEffect(() => {
         clear()
-        if (userData && userData.food.length !== 0) {
-            if (userData.water.length !== 0) {
-                const warr = [...userData?.water]
-                const ldate = newDate()
-                // console.log(warr)
-                const dbdate = warr[warr.length - 1].created
+        if (userData?.water?.length !== 0 && userData?.water !== null && userData?.water !== undefined) {
+            const warr = [...userData?.water]
+            const ldate = newDate()
+            const dbdate = warr[warr.length - 1].created
 
-                if (ldate === dbdate) {
-                    console.log('matched')
-                    setWater(parseInt(warr[warr.length - 1].water))
-                }
+            if (ldate === dbdate) {
+                setWater(parseInt(warr[warr.length - 1].water))
             }
+        }
+        if (userData && userData.food.length !== 0) {
             const arr = [...userData?.food]
-            const date = newDate()
-            const last = arr[arr.length-1]
-            // {console.log(last)
-            if(last.created===newDate()){
+            const last = arr[arr.length - 1]
+            if (last.created === newDate()) {
                 setFat(last.fat)
                 setProtein(last.protein)
                 setCarb(last.carb)
@@ -79,23 +74,6 @@ const Foodnutrition = ({ data }) => {
                 setCal(last.cal)
                 setFibre(last.fibre)
             }
-            // for (let i = arr.length - 1; i >= 0; i--) {
-            //     const SelectedDate = arr[i].created
-            //     console.log(SelectedDate)
-            //     if (date === SelectedDate) {
-            //         console.log('matched')
-            //         let ref = arr[i]
-            //         console.log(ref)
-            //         setFat(fat + ref.fat)
-            //         setCal(cal + ref.cal)
-            //         setCarb(carb + ref.carb)
-            //         setProtein(protein + ref.protein)
-            //         setFibre(fibre + ref.fibre)
-            //         setSugar(sugar + ref.sugar)
-            //     }
-            // }
-
-
         }
     }, [userData])
 
@@ -104,13 +82,25 @@ const Foodnutrition = ({ data }) => {
         try {
             if (userData?.water !== undefined && userData?.water !== null && userData?.water.length !== 0) {
                 let waterArray = [...userData?.water]
-                waterArray.push(waterData)
-                const updateRef = doc(db, "users", userData?.email)
-                await updateDoc(updateRef, {
-                    water: waterArray
-                })
+                let last = waterArray[waterArray.length-1]
+                // console.log("last",last.created)
+                if (last.created === newDate()) {
+                    console.log("last matched")
+                    last.water = parseInt(last.water)+parseInt(water)
+                    const updateRef = doc(db, "users", userData?.email)
+                    await updateDoc(updateRef, {
+                        water: waterArray
+                    })
+                }
+                else {
+                    waterArray.push(waterData)
+                    const updateRef = doc(db, "users", userData?.email)
+                    await updateDoc(updateRef, {
+                        water: waterArray
+                    })
+                }
             }
-            else{
+            else {
                 let waterArray = [waterData]
                 const updateRef = doc(db, "users", userData?.email)
                 await updateDoc(updateRef, {
@@ -129,7 +119,6 @@ const Foodnutrition = ({ data }) => {
     }
 
     const handleSubmit = async () => {
-        clear()
         const data = {
             fat,
             carb,
@@ -139,14 +128,40 @@ const Foodnutrition = ({ data }) => {
             protein,
             created: newDate()
         }
-
+        // console.log(data)
         try {
             let foodArray = [...userData?.food]
-            foodArray.push(data)
             const updateRef = doc(db, "users", userData?.email)
-            await updateDoc(updateRef, {
-                food: foodArray
-            })
+            if (foodArray.length !== 0) {
+                let last = foodArray[foodArray.length - 1]
+                if (last.created === newDate()) {
+                    last.fat = fat
+                    last.cal = cal
+                    last.protein = protein
+                    last.fibre = fibre
+                    last.sugar = sugar
+                    last.carb = carb
+                    await updateDoc(updateRef, {
+                        food: foodArray
+                    })
+                }
+
+                else {
+                    console.log("not found")
+                    foodArray.push(data)
+                    await updateDoc(updateRef, {
+                        food: foodArray
+                    })
+                }
+
+            }
+            else {
+                console.log("not found")
+                foodArray.push(data)
+                await updateDoc(updateRef, {
+                    food: foodArray
+                })
+            }
             setSuccess(true)
             setTimeout(() => {
                 setSuccess(false)
@@ -187,7 +202,7 @@ const Foodnutrition = ({ data }) => {
                         <div className='mt-4 grid grid-cols-2 grow gap-5 p-2'>
                             <div className='flex h-full gap-2 flex-col'>
                                 <FoodBox type="water" name="Water" water={water} setWater={setWater} bg="/water.jpg" />
-                                <Water data = {userData} />
+                                <Water data={userData} />
                             </div>
                             <div className='relative rounded-xl overflow-hidden flex items-center justify-center bg-blue-500'>
                                 <h1 className='text-[3rem] z-[100] font-productSansBold'>{water}</h1>&nbsp;L
