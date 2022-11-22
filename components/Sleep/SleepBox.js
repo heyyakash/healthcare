@@ -7,11 +7,11 @@ const SleepBox = ({time,setTime,data,submitTime,success}) => {
     const [timeBars,setTimeBars] = useState([])
 
     React.useEffect(() => {
-      if(data){
+      if(data?.sleep?.length!==0 && data?.sleep!==undefined && data?.sleep!==null){
         setTimeBars(data?.sleep)
         const sleepArr = [...data?.sleep]
         const last = sleepArr[sleepArr.length-1]
-        const lastDate = last.created
+        const lastDate = last?.created
         if((new Date().getDate()).toString() + (new Date().getMonth()).toString() === (new Date(lastDate).getDate()).toString() + (new Date(lastDate).getMonth()).toString()){
             setHrs(last.time.split(":")[0])
             setMin(last.time.split(":")[1])

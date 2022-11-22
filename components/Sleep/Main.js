@@ -36,7 +36,7 @@ const Main = ({ session }) => {
     }
     
     return (
-        <div className='grid gap-2 grid-cols-2 h-full w-full '>
+        <div className='grid gap-2 md:grid-cols-2 md:grid-rows-1 grid-rows-2 h-full w-full '>
             <div className=' w-full h-full flex flex-col'>
                 <SleepBox data = {data} setTime = {setTime} success = {success} submitTime = {submitTime} time = {time} />
             </div>

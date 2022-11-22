@@ -24,10 +24,10 @@ const SleepBars = ({timeBars}) => {
         setBars(newArr)
     }, [timeBars])
     
-    console.log(timeBars)
   return (
     <div className='bg-white rounded-xl py-2 flex flex-col justify-center items-center px-[25%]'>
         <div className='grow w-full flex items-end justify-center gap-3 pb-2'>
+            {timeBars.length===0?(<h2 className='self-center'>No Data</h2>):""}
             {bars.map((x)=>{
                 return(
                     <Bars height={x} />

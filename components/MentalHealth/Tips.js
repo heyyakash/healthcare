@@ -25,10 +25,10 @@ const Tips = ({ mood }) => {
                 <h2 className='text-2xl font-productSansBold'>Tips to make your day better{mood ? ", if you feel " : ""}{mood && <span className={`${colorMap[mood]}`}>{mood}</span>}</h2>
                 {mood !== null ?
                     <div className='grid mt-auto gap-2 grow grid-rows-5'>
-                        {Data[mood]?.map((tip) => <TipBox text={tip} />)}
+                        {Data[mood]?.map((tip) => <TipBox key = {tip} text={tip} />)}
                     </div> :
                     <div className='grid mt-auto gap-2 grow grid-rows-5'>
-                        {Data['none']?.map((tip) => <TipBox text={tip} />)}
+                        {Data['none']?.map((tip) => <TipBox key = {tip} text={tip} />)}
                     </div>
                     }
             </div>

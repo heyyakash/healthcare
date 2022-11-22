@@ -6,15 +6,15 @@ const MentalHealthBox = ({ mood, setMood }) => {
             <div className='h-full rounded-xl w-full relative bg-[url("/signUp.jpg")] bg-cover bg-no-repeat overflow-hidden flex flex-col justify-center'>
                 <div className='absolute bg-green-200/80 inset-0 z-0'></div> 
                 <img src="/mental.png" className='absolute   top-0 right-0 w-[150px] h-[90%]' alt="" />
-                <h2 className='text-3xl drop-shadow-lg  px-3 font-productSansBold'>How do you feel about</h2>
-                <h2 className='text-3xl drop-shadow-lg   px-3 font-productSansBold'>your emotions?</h2>
+                <h2 className='md:text-3xl drop-shadow-lg text-lg px-3 font-productSansBold'>How do you feel about</h2>
+                <h2 className='md:text-3xl drop-shadow-lg text-lg  px-3 font-productSansBold'>your emotions?</h2>
             </div>
 
             <div className='flex  flex-col bg-white py-2 px-4 rounded-xl'>
                 <p className='px-1 text-sm font-productSansBold'>Today I feel</p>
-                <div className='w-full grid grid-cols-6 gap-4 grow py-1'>
+                <div className='w-full grid md:grid-cols-6 md:grid-rows-1 grid-rows-2 grid-cols-3 gap-4 grow py-1'>
                     
-                    <div onClick={() => setMood('Happy')} className={` ${mood === "Happy" ? "bg-green-500" : "bg-orange-100/40"} hover:bg-green-500 moodbox`}>
+                    <div onClick={() => setMood('Happy')} className={` ${mood === "Happy" ? "bg-green-500" : "bg-orange-100/40"} py-2 md:py-0 hover:bg-green-500 moodbox`}>
                         <p className='text-3xl'>&#128516;</p>
                         <p className='text-sm font-productSansBold'>Happy</p>
                     </div>

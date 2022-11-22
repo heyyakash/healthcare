@@ -37,7 +37,7 @@ const BloodPressure = () => {
     ]
 
     return (
-        <div className=' overflow-hidden'>
+        <div className=' overflow-hidden hidden md:block'>
             <Bar
                 data={data}
                 keys={[

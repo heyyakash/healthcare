@@ -15,17 +15,15 @@ const Container = ({ children }) => {
     const[data,setData] = useRecoilState(userDataState)
 
 
-    // useEffect(() => 
-    //     onSnapshot(doc(db,"users",session?.user?.email),(doc)=>setData(doc.data()))
-    // , [])
+
     
 
     return (
         <>
-            <div className='flex md:h-[100vh] w-full bg-black'>
+            <div className='flex flex-col md:flex-row md:h-[100vh] h-auto w-full bg-black'>
                 <Navbar />
-                <div className='flex-1 bg-black p-4'>
-                    <div className='bg-white/95 flex flex-col gap-2 w-full p-4 h-full md:rounded-[20px]'>
+                <div className='flex-1 bg-black px-4 pb-4 md:p-4'>
+                    <div className='bg-white/95 rounded-xl flex flex-col gap-2 w-full p-4 h-full md:rounded-[20px]'>
                         <Header />
                         {children}
                     </div>
