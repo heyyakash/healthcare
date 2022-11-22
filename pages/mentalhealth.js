@@ -1,5 +1,5 @@
 import React from 'react'
-import Articles from '../components/MentalHealth/Articles'
+import Articles from '../components/mental-health/Articles'
 import Main from '../components/MentalHealth/Main'
 import { getSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
