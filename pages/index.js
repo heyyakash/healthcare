@@ -93,7 +93,7 @@ export default function Home({ data }) {
 
         <div className='w-full h-full flex flex-col md:w-[50%]'>
           <BMI data={userData} />
-          <a href="https://selfregistration.cowin.gov.in/" target="_blank" className=' mx-2.5 mt-auto hover:text-green-400 cursor-pointer trans hover:font-productSansBold  bg-white rounded-xl p-4 flex justify-between items-center'>
+          <a href="https://selfregistration.cowin.gov.in/" rel="noreferrer" target="_blank" className=' mx-2.5 mt-auto hover:text-green-400 cursor-pointer trans hover:font-productSansBold  bg-white rounded-xl p-4 flex justify-between items-center'>
             <p>Download vaccine certificate</p>
             <RiVirusFill />
           </a>

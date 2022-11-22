@@ -10,6 +10,7 @@ const Header = () => {
 
     const handleSignOut = ()=>{
       signOut()
+      localStorage.removeItem('userDoc')
       // router.push('/sleep')
     }
 

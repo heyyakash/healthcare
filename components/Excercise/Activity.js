@@ -46,7 +46,7 @@ const Activity = ({data}) => {
         <div className='bg-white md:col-span-2 h-full rounded-xl flex flex-col py-2 px-4'>
             <p className='font-productSansBold'>Your Activity</p>
             <div className="grow gap-4 p-2 flex justify-evenly items-center">
-                {days.map((day,index) => <ActivityBars  steps = {steps[index]} date={day.split('/')[0]} />)}
+                {days.map((day,index) => <ActivityBars key = {index} steps = {steps[index]} date={day.split('/')[0]} />)}
             </div>
         </div>
     )

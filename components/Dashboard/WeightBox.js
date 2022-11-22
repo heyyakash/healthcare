@@ -17,7 +17,7 @@ const WeightBox = ({data,unit}) => {
     <div className=' h-[140px] relative rounded-xl border-2 flex overflow-hidden flex-col items-center justify-center '>
             <GoTriangleDown className='text-2xl absolute -top-2  left-[50%] text-blue-500 translate-x-[-50%]' />
             <div className='relative flex justify-between gap-4'>
-                {arr.map((num)=><p className={`${num===parseInt(data)?"text-black":"text-black/30"} text-[2.5rem]`}>{num}</p>)}
+                {arr.map((num)=><p key = {num} className={`${num===parseInt(data)?"text-black":"text-black/30"} text-[2.5rem]`}>{num}</p>)}
             </div>
             <div className='absolute bottom-0 mb-2 font-bold'>{unit}</div>
     </div>
