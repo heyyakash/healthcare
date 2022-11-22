@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Articles = ({name}) => {
   return (<>
-    <div className='pt-72'>
+     <div className='pt-72'>
       <a href='#123'><h1 className='flex justify-center text-4xl font-bold '><span className=' border-b-8 border-indigo-500 '>ARTICLES</span></h1></a>
     </div>
 
@@ -27,7 +27,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-7 font-bold'>WHAT IS MENATL HEALTH <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-7 font-bold'>WHAT IS MENATL HEALTH </p>
                     
                 </div>
             </div>
@@ -50,7 +50,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-7 font-bold'>Sleep And Mental Health <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-7 font-bold'>Sleep And Mental Health </p>
                     
                 </div>
             </div>
@@ -73,7 +73,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Nutritional psychiatry <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Nutritional psychiatry</p>
                     
                 </div>
             </div>
@@ -97,7 +97,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Relationships and Mental Health <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Relationships and Mental Health </p>
                     
                 </div>
             </div>
@@ -120,7 +120,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Exercise and Mental Health <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Exercise and Mental Health</p>
                     
                 </div>
             </div>
@@ -143,7 +143,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Homelessness and Mental Illness <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Homelessness and Mental Illness </p>
                     
                 </div>
             </div>
@@ -166,7 +166,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Mental health and heart disease <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Mental health and heart disease</p>
                     
                 </div>
             </div>
@@ -189,7 +189,7 @@ const Articles = ({name}) => {
                             View
                             </div>
                         </Link>
-                           <p className='mx-8 font-bold'>Relationships and Mental Health <span className='mx-9'>- by HARVARD</span></p>
+                           <p className='mx-8 font-bold'>Relationships and Mental Health</p>
                     
                 </div>
             </div>
@@ -205,6 +205,7 @@ const Articles = ({name}) => {
             </div>
             <div className='border-b-full'></div>
     </>
+
 
   );
 }
