@@ -9,6 +9,7 @@ import WaterBody from '../components/Food/WaterBody'
 import { db } from '../firebase'
 import Water from '../components/Dashboard/Water'
 import { newDate } from '../Helpers/newDate'
+import { set } from 'react-hook-form'
 
 const Foodnutrition = ({ data }) => {
     const [userData, setData] = useState(null)
@@ -68,21 +69,31 @@ const Foodnutrition = ({ data }) => {
             }
             const arr = [...userData?.food]
             const date = newDate()
-            for (let i = arr.length - 1; i >= 0; i--) {
-                const SelectedDate = arr[i].created
-                console.log(SelectedDate)
-                if (date === SelectedDate) {
-                    console.log('matched')
-                    let ref = arr[i]
-                    console.log(ref)
-                    setFat(fat + ref.fat)
-                    setCal(cal + ref.cal)
-                    setCarb(carb + ref.carb)
-                    setProtein(protein + ref.protein)
-                    setFibre(fibre + ref.fibre)
-                    setSugar(sugar + ref.sugar)
-                }
+            const last = arr[arr.length-1]
+            // {console.log(last)
+            if(last.created===newDate()){
+                setFat(last.fat)
+                setProtein(last.protein)
+                setCarb(last.carb)
+                setSugar(last.sugar)
+                setCal(last.cal)
+                setFibre(last.fibre)
             }
+            // for (let i = arr.length - 1; i >= 0; i--) {
+            //     const SelectedDate = arr[i].created
+            //     console.log(SelectedDate)
+            //     if (date === SelectedDate) {
+            //         console.log('matched')
+            //         let ref = arr[i]
+            //         console.log(ref)
+            //         setFat(fat + ref.fat)
+            //         setCal(cal + ref.cal)
+            //         setCarb(carb + ref.carb)
+            //         setProtein(protein + ref.protein)
+            //         setFibre(fibre + ref.fibre)
+            //         setSugar(sugar + ref.sugar)
+            //     }
+            // }
 
 
         }

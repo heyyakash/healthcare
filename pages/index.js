@@ -54,7 +54,7 @@ export default function Home({ data }) {
   }
 
   return (
-    userData&&
+    userData &&
     <div className="grow">
       <Head>
         <title>Dashboard</title>
@@ -75,7 +75,7 @@ export default function Home({ data }) {
                 <h1 className='text-2xl'>5 </h1><p className='text-md text-gray-400 font-light'>Litre</p>
                 <p>Water</p>
               </div>
-              <Water data = {userData} />
+              <Water data={userData} />
             </div>
             <div className='lilBox h-full'>
               <div className='flex flex-col items-center  h-full w-[40%] justify-center gap-1'>
@@ -91,8 +91,20 @@ export default function Home({ data }) {
           </div>
         </div>
 
-        <div className='w-full h-full flex flex-col md:w-[50%]'>
+        <div className='w-full h-full flex flex-col gap-3 md:w-[50%]'>
           <BMI data={userData} />
+          <div className='grow  p-3'>
+            <div className='bg-white h-full w-full rounded-xl p-4'>
+              <iframe
+                className='w-full h-full rounded-xl'
+                src="https://www.youtube.com/embed/hmFQqjMF_f0"
+                title="How playing sports benefits your body ... and your brain - Leah Lagos and Jaspal Ricky Singh"
+                frameBorder={0}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen=""
+              />
+            </div>
+          </div>
           <a href="https://selfregistration.cowin.gov.in/" rel="noreferrer" target="_blank" className=' mx-2.5 mt-auto hover:text-green-400 cursor-pointer trans hover:font-productSansBold  bg-white rounded-xl p-4 flex justify-between items-center'>
             <p>Download vaccine certificate</p>
             <RiVirusFill />

@@ -35,10 +35,10 @@ const CheckExcercise = () => {
             </div>
             <div className='grow grid gap-4  grid-cols-2'>
                 <div className={`bg-gray-100 rounded-xl ${fetching ? 'animate-pulse' : ''} flex flex-col items-center justify-center text-3xl text-black`}>
-                    {data ? data["nf_calories"] : 1200}
-                    <p className='text-sm'>Calories</p>
+                    {data ? data["nf_calories"] : 0}
+                    <p className='text-sm'>kCal</p>
                 </div>
-                <div className={`bg-gray-100 rounded-xl ${fetching ? 'animate-pulse' : ''}`}></div>
+                <div className={`bg-[url('/loginBg.jpg')] bg-cover rounded-xl ${fetching ? 'animate-pulse' : ''}`}></div>
             </div>
         </div>
     )

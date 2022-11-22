@@ -21,7 +21,7 @@ const Main = () => {
         </div>
         <div className='flex flex-col gap-3 md:w-[50%] h-full p-2'>
             <div className='h-[50%] w-full bg-white rounded-xl'>
-                <News search={"yoga"} />
+                <News search={"Yoga"} />
             </div>
         </div>
     </div>
