@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import settings from '../Images/settings.png'
 import phone from '../Images/contactus.png'
@@ -7,13 +7,18 @@ import vc from '../Images/vc.png'
 import food from '../Images/food.png'
 import mental from '.././Images/mental.png'
 import  exercise from '.././Images/exercise.png'
-
+import { getSession } from 'next-auth/react'
 
 import { FiTwitter } from 'react-icons/fi'
 import { BsInstagram } from 'react-icons/bs'
 import { AiFillFacebook } from 'react-icons/ai'
+import { useRouter } from 'next/router'
 
-const Help = () => {  
+const Help = ({data}) => {  
+  const router = useRouter()
+  useEffect(()=>{
+    if(!data) router.push('/login')
+  },[])
   return (<>
     <div>
       {/* <h1 className='text-3xl mx-1'>Hello. What can we help you with?</h1>
@@ -119,3 +124,13 @@ const Help = () => {
 }
 
 export default Help
+
+
+export async function getServerSideProps(context){
+  const session = await getSession(context)
+  return{
+    props:{
+      data:session
+    }
+  }
+}
