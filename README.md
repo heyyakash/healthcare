@@ -7,6 +7,7 @@ H.care is a healthcare dashboard that caters to your healthcare needs
 3. A dashboard that displays your sleep data in graphical way and gives tips on sleeping well.
 4. A dashboard that provides tips to improve your mental health according to your mood.
 5. A dashboard that tracks your activity, displays calories burnt upon query and provides video links for various exercises.
+6. It has a chatbot for your health and fitness concerns
 
 ## Introduction
 1. H.care is powered by [NextJs](https://nextjs.org/) and [Firebase](https://firebase.google.com/) .
@@ -47,5 +48,5 @@ The app should be running at http://localhost:3000 by default.
 This project is licensed under the MIT license. Feel free to use it and if you want to contribute, please feel free to fork the project and make a pull request. Thanks!
 
 # Contributors Guide 🥰
-Thanks for considering to contribute to the project. If you have any questions, please feel free to contact me at [Twitter](https://twitter.com/home). 
+Thanks for considering to contribute to the project. If you have any questions, please feel free to contact me at [Twitter](https://twitter.com/heyyakash). 
 
