@@ -10,12 +10,13 @@ H.care is a healthcare dashboard that caters to your healthcare needs
 
 ## Introduction
 1. H.care is powered by [NextJs](https://nextjs.org/) and [Firebase](https://firebase.google.com/) .
-2. It uses [Nutritionix](https://developer.nutritionix.com/) API to display nutrition information and exercise information. What makes this api great is it takes natural language like 'I ate 2 eggs for breakfast today' and returns acurate nutritional information. Same goes for exercise information.
-3. It uses [nivo.rocks](https://nivo.rocks/) for graphical charts. A great collection of components built on top of [React](https://reactjs.org/) and [D3JS](https://d3js.org/) .
-4. It uses [NextAuth](https://next-auth.js.org/) for authentication.
-5. Firebase provides database for storing data and provides functions to fetch data in realtime [Docs](https://firebase.google.com/docs/build) .
-6. It uses [React-Icons](https://react-icons.github.io/react-icons) for icons.
-7. It uses [TheNewsApi](https://www.thenewsapi.com/) for news fetching . It is great for getting filtered news. 
+2. It uses [TailwindCSS](https://tailwindcss.com/docs/guides/nextjs) for styling
+3. It uses [Nutritionix](https://developer.nutritionix.com/) API to display nutrition information and exercise information. What makes this api great is it takes natural language like 'I ate 2 eggs for breakfast today' and returns acurate nutritional information. Same goes for exercise information.
+4. It uses [nivo.rocks](https://nivo.rocks/) for graphical charts. A great collection of components built on top of [React](https://reactjs.org/) and [D3JS](https://d3js.org/) .
+5. It uses [NextAuth](https://next-auth.js.org/) for authentication.
+6. Firebase provides database for storing data and provides functions to fetch data in realtime [Docs](https://firebase.google.com/docs/build) .
+7. It uses [React-Icons](https://react-icons.github.io/react-icons) for icons.
+8. It uses [TheNewsApi](https://www.thenewsapi.com/) for news fetching . It is great for getting filtered news. 
 
 
 ## Getting Started
