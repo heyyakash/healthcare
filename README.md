@@ -21,9 +21,9 @@ H.care is a healthcare dashboard that caters to your healthcare needs
 
 
 ## Getting Started
-This project requires you to have a **GOOGLE_CLIENT_ID** and **GOOGLE_CLIENT_SECRET** which you will receive when you will create a new Firebase App [here](https://https://console.firebase.google.com/). \ 
-A whole step by step process is [here](https://scribehow.com/shared/Google_Workflow__0XyPlLRDSCCrRPi_JlJDIg).
-\ It will also require **NEXT_PUBLIC_NEWS_API_TOKEN** which is a api key that you can get [here](https://www.thenewsapi.com/) 
+This project requires you to have a **GOOGLE_CLIENT_ID** and **GOOGLE_CLIENT_SECRET** which you will receive when you will create a new Firebase App [here](https://https://console.firebase.google.com/).\
+A whole step by step process is [here](https://scribehow.com/shared/Google_Workflow__0XyPlLRDSCCrRPi_JlJDIg).\
+It will also require **NEXT_PUBLIC_NEWS_API_TOKEN** which is a api key that you can get [here](https://www.thenewsapi.com/) 
 
 ### Running on local machine
 1. Fork the repository and clone it in a local directory.
