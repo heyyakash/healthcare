@@ -15,9 +15,13 @@ H.care is a healthcare dashboard that caters to your healthcare needs
 4. It uses [NextAuth](https://next-auth.js.org/) for authentication.
 5. Firebase provides database for storing data and provides functions to fetch data in realtime [Docs](https://firebase.google.com/docs/build) .
 6. It uses [React-Icons](https://react-icons.github.io/react-icons) for icons.
+7. It uses [TheNewsApi](https://www.thenewsapi.com/) for news fetching . It is great for getting filtered news. 
+
 
 ## Getting Started
-This project requires you to have a **GOOGLE_CLIENT_ID** and **GOOGLE_CLIENT_SECRET** which you will receive when you will create a new Firebase App [here](https://https://console.firebase.google.com/). It will also require **NEXT_PUBLIC_NEWS_API_TOKEN** which is a api key that you can get [here](https://www.thenewsapi.com/) 
+This project requires you to have a **GOOGLE_CLIENT_ID** and **GOOGLE_CLIENT_SECRET** which you will receive when you will create a new Firebase App [here](https://https://console.firebase.google.com/). \ 
+A whole step by step process is [here](https://scribehow.com/shared/Google_Workflow__0XyPlLRDSCCrRPi_JlJDIg).
+\ It will also require **NEXT_PUBLIC_NEWS_API_TOKEN** which is a api key that you can get [here](https://www.thenewsapi.com/) 
 
 ### Running on local machine
 1. Fork the repository and clone it in a local directory.
@@ -38,5 +42,9 @@ The app should be running at http://localhost:3000 by default.
 | ![disp3](https://user-images.githubusercontent.com/85030597/203629972-57fdafc4-447c-49b0-aee4-6f982b39cb4d.png) | ![disp4](https://user-images.githubusercontent.com/85030597/203630033-1f61e654-958b-45ce-af1f-a472fd76996f.png) |
 | ![disp5](https://user-images.githubusercontent.com/85030597/203632695-3a1954b9-2e69-464c-905f-a8f0230f4ce7.png) | ![disp6](https://user-images.githubusercontent.com/85030597/203632727-054c453e-0667-4386-87b9-11dc56d5633c.png) |
 
+# License
+This project is licensed under the MIT license. Feel free to use it and if you want to contribute, please feel free to fork the project and make a pull request. Thanks!
 
+# Contributors Guide 🥰
+Thanks for considering to contribute to the project. If you have any questions, please feel free to contact me at [Twitter](https://twitter.com/home). 
 
