@@ -20,19 +20,22 @@ const Activity = ({data}) => {
         }
         arr.reverse()
         setDays(arr)
-        
+        // console.log("arr",arr)
         if(data?.steps!==undefined && data?.steps!==null && data?.steps?.length!==0){
             for(let j=0;j<days.length;j++){
-                for(let i=0;i<data.steps.length;i++){
-                    if(data.steps[i].created===days[j]){
-                        stepArr.push(data.steps[i].steps)
+                for(let i=0;i<data?.steps?.length;i++){
+                    if(data?.steps[i]?.created===days[j]){
+                        // stepArr.push(data?.steps[i]?.steps)
+                        stepArr[j]= data?.steps[i]?.steps
+                        break       
                     }
                     else{
-                        stepArr.push(0)
+                        stepArr[j]= 0
                     }
                 }
+                // for(let i = 0;i<data.)
             }
-            console.log(stepArr)
+            console.log("stepArr",days.length)
             setSteps(stepArr)
         }
         else{
@@ -41,7 +44,9 @@ const Activity = ({data}) => {
             }
             setSteps(stepArr)
         }
+        
     }, [data])
+    console.log(steps)
     return (
         <div className='bg-white md:col-span-2 h-full rounded-xl flex flex-col py-2 px-4'>
             <p className='font-productSansBold'>Your Activity</p>

@@ -29,7 +29,7 @@ const News = ({ search }) => {
 
     const handleNews = async () => {
         const newDate = (new Date().getFullYear()).toString() + '-' + (new Date().getMonth() + 1).toString() + '-' + (new Date().getDate()).toString()
-        const string = `https://api.thenewsapi.com/v1/news/top?api_token=${process.env.NEXT_PUBLIC_NEWS_API_TOKEN}&locale=in&limit=4&search=${search}&published_on=${newDate}`
+        const string = `https://api.thenewsapi.com/v1/news/top?api_token=${process.env.NEXT_PUBLIC_NEWS_API_TOKEN}&locale=in&limit=4&search=${search}&published_on=${"2022-11-23"}`
         const res = await fetch(string, { method: "GET" })
         const data = await res.json()
         if (res.status !== 200) {
