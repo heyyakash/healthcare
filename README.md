@@ -1,6 +1,7 @@
 # H.care
 ![Screenshot 2022-11-23 225900](https://user-images.githubusercontent.com/85030597/203619867-2762f161-42ad-47fe-8c23-6573cb009497.png)\
 H.care is a healthcare dashboard that caters to your healthcare needs
+[https://healthcare-theta.vercel.app/](https://healthcare-theta.vercel.app/)
 ## What does it provide?
 1. A dashboard that displays your water consumption, steps, sleep records etc in a graphical way and display health news.
 2. A dashboard that provides nutrient information and shows how much carbs, calories, protien, sugar, etc. you have consumed upon query.
